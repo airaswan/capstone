@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Float & Fade Animation (Reusable) */
+@keyframes floatUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-fade {
+  opacity: 0;
+  animation: floatUpFadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HEADER */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1350px;
+  margin: auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 60px;
+  height: auto;
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b22222;
+}
+
+.region-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  color: #b22222;
+}
+
+.main-nav a:hover {
+  color: #ff0000;
+}
+
+.btn-admin {
+  background-color: #b22222;
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background: center/cover no-repeat;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 600px;
+  padding-right: 1rem;
+  animation: floatUpFadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  border-top: 2px solid white;
+  display: inline-block;
+  padding-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #f0eaea;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: floatUpFadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+.btn-red {
+  background-color: #c62828;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #a31616;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #b22222;
+}
+
+.hero-image-right {
+  flex: 0 0 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatUpFadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.hero-image-right img {
+  max-width: 1000px;
+  height: auto;
+}
+
+
+/* ABOUT SECTION */
+.about-section {
+  padding: 5rem 2rem;
+  background: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.region-logo {
+  width: 180px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 1rem;
+}
+
+/* VISION AND MISSION */
+.vision-mission-section {
+  background-color: #f2f2f2;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.vision-mission-section h2 {
+  font-size: 2rem;
+  color: #b22222;
+}
+
+.vision-mission-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 400px;
+  flex: 1;
+}
+
+.card h3 {
+  color: white;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+}
+
+
+.vision-card {
+  background-image: linear-gradient(rgba(178, 34, 34, 0.40), rgba(178, 34, 34, 0.30)), url('vision.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card {
+  background-image: linear-gradient(rgba(178, 34, 34, 0.40), rgba(178, 34, 34, 0.30)), url('mission.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add dark overlay for better text readability */
+.vision-card::before,
+.mission-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.vision-card h3,
+.vision-card p,
+.mission-card h3,
+.mission-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* MANDATE SECTION */
+.mandate-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.mandate-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #b22222;
+}
+
+.mandate-section ol {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.mandate-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #b22222;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-container ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer a {
+  color: white;
+  font-weight: 600;
+}
