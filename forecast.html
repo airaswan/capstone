@@ -6,38 +6,6 @@
   <title>Bureau of Fire Protection - Region III</title>
   <link rel="stylesheet" href="forecast_style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .main-content {
-      height: 100vh;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-
-    #dashboard {
-      height: 100vh;
-      width: 100%;
-    }
-
-    .tableauPlaceholder {
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
-
-    .tableauViz {
-      height: 100% !important;
-      width: 100% !important;
-    }
-  </style>
 </head>
 <body>
 
@@ -70,7 +38,8 @@
   <!-- MAIN CONTENT -->
   <main class="main-content">
     <section id="dashboard">
-      <div class="tableauPlaceholder" id="viz1751711559536">
+      <h2>Fire Incidents Dashboard</h2>
+      <div class="tableauPlaceholder" id="viz1751711559536" style="position: relative;">
         <noscript>
           <a href="#">
             <img alt="Dashboard 1"
@@ -78,14 +47,15 @@
               style="border: none" />
           </a>
         </noscript>
-        <object class="tableauViz">
+        <object class="tableauViz" style="display: none;">
           <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
           <param name="embed_code_version" value="3" />
           <param name="site_root" value="" />
           <param name="name" value="Capstone_17517115316760/Dashboard1" />
           <param name="tabs" value="no" />
           <param name="toolbar" value="yes" />
-          <param name="static_image" value="https://public.tableau.com/static/images/Ca/Capstone_17517115316760/Dashboard1/1.png" />
+          <param name="static_image"
+            value="https://public.tableau.com/static/images/Ca/Capstone_17517115316760/Dashboard1/1.png" />
           <param name="animate_transition" value="yes" />
           <param name="display_static_image" value="yes" />
           <param name="display_spinner" value="yes" />
@@ -98,8 +68,21 @@
       <script type="text/javascript">
         var divElement = document.getElementById("viz1751711559536");
         var vizElement = divElement.getElementsByTagName("object")[0];
-        vizElement.style.width = "100%";
-        vizElement.style.height = "100vh";
+
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "1000px";
+          vizElement.style.minHeight = "827px";
+          vizElement.style.maxHeight = "887px";
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "1000px";
+          vizElement.style.minHeight = "827px";
+          vizElement.style.maxHeight = "887px";
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "1577px";
+        }
 
         var scriptElement = document.createElement("script");
         scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
